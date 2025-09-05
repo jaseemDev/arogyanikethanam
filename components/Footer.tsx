@@ -30,8 +30,8 @@ const Footer = () => {
 
   return (
     <div className="bg-[var(--color-green-dark)] w-full rounded-2xl">
-      <div className="grid grid-cols-1 md:grid-cols-4 text-center p-8 text-[var(--background)]">
-        <div className="flex justify-center items-start">
+      <div className="grid grid-cols-1 md:grid-cols-4 text-center p-8 text-[var(--background)] gap-8">
+        <div className="flex justify-left lg:justify-center items-start">
           <Image
             src="/logo-w.svg"
             alt="Arogya Nikethanam"

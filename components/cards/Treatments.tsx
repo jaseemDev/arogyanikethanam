@@ -22,6 +22,7 @@ const Treatments = ({ title, description, image }: TreatmentsProps) => {
           objectFit: "cover",
         }}
         unoptimized
+        quality={50}
       />
       <span className="bg-gradient-to-t bg-[var(--color-green-dark)] from-[var(--color-green-dark)] to-[var(--color-green)] opacity-[0.5] w-full h-full absolute top-0 lft-0 rounded-2xl"></span>
       <div className="absolute bottom-3 p-4 lg:p-8 text-[var(--color-white)]">
