@@ -3,15 +3,11 @@ import Image from "next/image";
 import React from "react";
 import heroImageDesk from "../../public/hero-bg-og-c.png";
 import Bingo from "../buttons/Bingo";
-
-import { menuItems } from "../../constants/navitems";
-import Nav from "./Nav";
 import { motion } from "motion/react";
 
 const Hero = () => {
   return (
     <div className="bg-[var(--background-secondary)] rounded-3xl  flex flex-wrap items-end justify-end">
-      <Nav menuItems={menuItems} />
       <div className="h-full lg:h-130 flex flex-wrap items-end justify-end">
         <div className="lg:w-[50%] w-full p-8 lg:p-16">
           <motion.h1

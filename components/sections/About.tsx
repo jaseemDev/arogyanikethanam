@@ -10,7 +10,7 @@ type aboutDescriptionProps = {
 const About = ({ description }: aboutDescriptionProps) => {
   return (
     <motion.div
-      className="flex flex-col items-center w-full text-[var(--color-green-dark)] lg:max-w-[80%]"
+      className="flex flex-col items-center justify-center w-full text-[var(--color-green-dark)] lg:max-w-[80%]"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}

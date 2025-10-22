@@ -13,62 +13,73 @@ import { motion } from "motion/react";
 
 export default function Home() {
   return (
-    <div
-      className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-2 lg:p-8 
-    gap-16 py-12 lg:py-16"
-    >
-      <SectionTitle title={"About us"} />
-      <About description={aboutDetails} />
-      <SectionTitle title={"Treatments"} />
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="w-full items-center flex flex-col gap-8"
+    <div className="font-sans flex flex-col min-h-screen p-2 lg:p-8 gap-16 py-12 lg:py-16">
+      <section
+        id="aboutUs"
+        className="flex flex-col items-center justify-center w-full scroll-mt-20"
       >
-        <Treatment />
-      </motion.div>
+        <SectionTitle title={"About us"} />
+        <About description={aboutDetails} />
+      </section>
+      <section id="treatments" className="w-full  scroll-mt-20">
+        <SectionTitle title={"Treatments"} />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="w-full items-center flex flex-col gap-8"
+        >
+          <Treatment />
+        </motion.div>
+      </section>
 
-      <SectionTitle title="Doctors" />
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="w-full items-center flex flex-col gap-8"
-      >
-        <Doctors />
-      </motion.div>
-      <SectionTitle title="case studies" />
+      <section id="doctors" className="w-full  scroll-mt-20">
+        <SectionTitle title="Doctors" />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="w-full items-center flex flex-col gap-8"
+        >
+          <Doctors />
+        </motion.div>
+      </section>
+      <section id="case-studies" className="w-full  scroll-mt-20">
+        <SectionTitle title="case studies" />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="w-full items-center flex flex-col gap-8"
+        >
+          <Cases />
+        </motion.div>
+      </section>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="w-full items-center flex flex-col gap-8"
-      >
-        <Cases />
-      </motion.div>
-
-      <SectionTitle title="Voices of Healing" />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="w-full items-center flex flex-col gap-8"
-      >
-        <Testimonials />
-      </motion.div>
-      <div className="w-full">
+      <section id="testimonials" className="w-full  scroll-mt-20">
+        <SectionTitle title="Voices of Healing" />
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="w-full items-center flex flex-col gap-8"
         >
-          <MarketingBanner />
+          <Testimonials />
         </motion.div>
-        <Footer />
-      </div>
+      </section>
+      <section className="w-full scroll-mt-20" id="contact-us">
+        <div className="w-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="w-full items-center flex flex-col gap-8"
+          >
+            <MarketingBanner />
+          </motion.div>
+          <Footer />
+        </div>
+      </section>
     </div>
   );
 }

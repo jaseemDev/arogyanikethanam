@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import logo from "../../public/logo.svg";
 import { Menu, X } from "lucide-react";
 import IconButton from "../buttons/IconButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type NavProps = {
   menuItems: Navlinks[];
@@ -16,12 +16,29 @@ const Nav = ({ menuItems }: NavProps) => {
   const pathname = usePathname();
   const [isActive, setIsActive] = useState(false);
 
+  const [isScroll, setIsScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScroll(window.scrollY > 20); // add shadow after scrolling 20px
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleButtonClick = () => {
     setIsActive((prev) => !prev);
   };
 
   return (
-    <div className="w-full p-8 lg:p-12 flex items-center">
+    <div
+      className={`w-[80%] p-8 lg:py-4 lg:px-12  mx-auto flex items-center fixed left-[50%] -translate-x-[50%] z-30 bg-[var(--background-secondary)] rounded-2xl
+      ${
+        isScroll ? "shadow-lg top-[2%]" : "shadow-none top-[4%]"
+      } transition-all duration-300 ease-in-out
+    `}
+    >
       {/* Logo */}
       <div>
         <Image

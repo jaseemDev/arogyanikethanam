@@ -2,31 +2,31 @@ export const menuItems = [
   {
     id: 1,
     label: "Home",
-    link: "/",
+    link: "/#home",
   },
   {
     id: 2,
     label: "About Us",
-    link: "/about-us",
+    link: "/#aboutUs",
   },
   {
     id: 3,
     label: "Treatments",
-    link: "/treatments",
+    link: "/#treatments",
   },
   {
     id: 4,
     label: "Doctors",
-    link: "/doctors",
+    link: "/#doctors",
   },
   {
     id: 5,
     label: "Case studies",
-    link: "/case-studies",
+    link: "/#case-studies",
   },
   {
     id: 6,
     label: "Contact Us",
-    link: "contact-us",
+    link: "/#contact-us",
   },
 ];
